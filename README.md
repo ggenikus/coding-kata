@@ -1,4 +1,6 @@
 coding-kata
 ===========
 
-My coding kata workspace
+My coding kata workspace.
+
+
