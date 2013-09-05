@@ -26,10 +26,16 @@
           (roman->arabic "IVI") => 5 
           (roman->arabic "MMMCCCXXXIII") => 3333))
 
+(fact "test roman->arabic-helper"
+      (roman->arabic-helper "I") => [1]
+      (roman->arabic-helper ) => nil
+      (roman->arabic-helper "I" "I" "V") => [1 4])
+
 (fact " roman->arabic-helper should use value-of"
       (roman->arabic-helper "I") => truthy
       (provided
         (value-of "I") => 1))
+
 
 (fact " arabic->roman-helper should use value-of"
       (arabic->roman-helper 1) => truthy
@@ -43,8 +49,7 @@
               (arabic->roman-helper "I") => [1]))
       (arabic->roman 1) => "I"
       (arabic->roman 2) => "II"
-      (arabic->roman 3333) => "MMMCCCXXXIII"
-      )
+      (arabic->roman 3333) => "MMMCCCXXXIII")
 
 
 
